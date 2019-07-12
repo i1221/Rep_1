@@ -1,0 +1,1402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Viber.Bot</name>
+    </assembly>
+    <members>
+        <member name="T:Viber.Bot.CallbackData">
+            <summary>
+            Webhook callback data.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Event">
+            <summary>
+            Callback type - which event triggered the callback.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.MessageToken">
+            <summary>
+            Unique ID of the message.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Timestamp">
+            <summary>
+            Time of the event that triggered the callback (epoch time).
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.UserId">
+            <summary>
+            Unique Viber user id.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.User">
+            <summary>
+            Viber user.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Subscribed">
+            <summary>
+            Indicated whether a user is already subscribed.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Context">
+            <summary>
+            Any additional parameters added to the deep link used to access the conversation passed as a string.
+            </summary>
+            <remarks>
+            See deep link section for additional information: https://developers.viber.com/docs/tools/deep-links.
+            </remarks>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Description">
+            <summary>
+            A string describing the failure.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Sender">
+            <summary>
+            Viber user.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.Message">
+            <summary>
+            Message object.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.CallbackData.message">
+            <summary>
+            Message object.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ChatMember">
+            <summary>
+            Chat member.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ChatMember.Id">
+            <summary>
+            Unique Viber user id.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ChatMember.Role">
+            <summary>
+            Chat member role.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.Contact">
+            <summary>
+            Contact object.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Contact.Name">
+            <summary>
+            Name of the contact. Max 28 characters.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Contact.TN">
+            <summary>
+            Phone number of the contact. Max 18 characters.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ContactMessage">
+            <summary>
+            Contact message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.ContactMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.ContactMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ContactMessage.Contact">
+            <summary>
+            Contact object.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.FileMessage">
+            <summary>
+            File message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.FileMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.FileMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.FileMessage.Media">
+            <summary>
+            URL of the file. Max size 50 MB. See forbidden file formats for unsupported file types
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.FileMessage.Size">
+            <summary>
+            Size of the file in bytes.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.FileMessage.FileName">
+            <summary>
+            Name of the file. File name should include extension. Max 256 characters (including file extension). Sending a file without extension or with the wrong extension might cause the client to be unable to open the file.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.Keyboard">
+            <summary>
+            Keyboard object.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.Keyboard.Type">
+            <summary>
+            Const value.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.Buttons">
+            <summary>
+            Array containing all keyboard buttons by order.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.DefaultHeight">
+            <summary>
+            When true - the keyboard will always be displayed with the same height as the native keyboard.
+            When false - short keyboards will be displayed with the minimal possible height.
+            Maximal height will be native keyboard height.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.BackgroundColor">
+            <summary>
+            Background color of the keyboard (valid color HEX value).
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.CustomDefaultHeight">
+            <summary>
+            How much percent of free screen space in chat should be taken by keyboard.
+            The final height will be not less than height of system keyboard.
+            </summary>
+            <remarks>Possible values: 40-70.</remarks>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.HeightScale">
+            <summary>
+            Allow use custom aspect ratio for Carousel content blocks.
+            Scales the height of the default square block (which is defined on client side) to the given value in percents.
+            It means blocks can become not square and it can be used to create rich messages with correct custom aspect ratio.
+            This is applied to all blocks in the Carousel content.
+            </summary>
+            <remarks>Possible values: 20-100. Default value: 100.</remarks>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.ButtonsGroupColumns">
+            <summary>
+            Represents size of block for grouping buttons during layout.
+            </summary>
+            <remarks>Possible values: 1-6. Default value: 6.</remarks>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.ButtonsGroupRows">
+            <summary>
+            Represents size of block for grouping buttons during layout.
+            </summary>
+            <remarks>Possible values: 1-7. Default value: 7 for Carousel content ; 2 for Keyboard.</remarks>
+        </member>
+        <member name="P:Viber.Bot.Keyboard.InputFieldState">
+            <summary>
+            Customize the keyboard input field.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.KeyboardButton">
+            <summary>
+            Keyboard button.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.ActionType">
+            <summary>
+            Type of action pressing the button will perform.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.KeyboardActionType.Reply"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.ActionBody">
+            <summary>
+            Text for 'reply' and 'none'. ActionType or URL for 'open-url'.
+            </summary>
+            <remarks>For ActionType 'reply' - text. For ActionType 'open-url' - Valid URL.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.Text">
+            <summary>
+            Text to be displayed on the button. Can contain some HTML tags.
+            </summary>
+            <remarks>
+            Free text. Valid and allowed HTML tags Max 250 characters.
+            If the text is too long to display on the button it will be cropped and ended with "…".
+            </remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.Columns">
+            <summary>
+            Button width in columns.
+            </summary>
+            <remarks>Possible values: 1-6. Default value: 6.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.Rows">
+            <summary>
+            Button height in rows.
+            </summary>
+            <remarks>Possible values: 1-2. Default value: 1.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.BackgroundColor">
+            <summary>
+            Background color of button (valid color HEX value).
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.Silent">
+            <summary>
+            Determine whether the user action is presented in the conversation.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.BackgroundMediaType">
+            <summary>
+            Type of the background media.
+            </summary>
+            <remarks>
+            Default value: <see cref="F:Viber.Bot.BackgroundMediaType.Picture"/>.
+            Max size: 500 kb.
+            </remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.BackgroundMedia">
+            <summary>
+            URL for background media content (picture or gif). Will be placed with aspect to fill logic.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.BackgroundLoop">
+            <summary>
+            When true - animated background media (gif) will loop continuously. When false - animated background media will play once and stop.
+            </summary>
+            <remarks>Default value: true.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.Image">
+            <summary>
+            URL of image to place on top of background (if any).
+            Can be a partially transparent image that will allow showing some of the background.
+            Will be placed with aspect to fill logic.
+            </summary>
+            <remarks>JPEG and PNG files are supported. Max size: 500 kb.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextVerticalAlign">
+            <summary>
+            Vertical alignment of the text.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.TextVerticalAlign.Middle"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextHorizontalAlign">
+            <summary>
+            Horizontal align of the text.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.TextHorizontalAlign.Center"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextPaddings">
+            <summary>
+            Custom paddings for the text in points. The value is an array of Integers [top, left, bottom, right].
+            </summary>
+            <remarks>Possible values: per padding 0-12. Default value: [12,12,12,12].</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextOpacity">
+            <summary>
+            Text opacity.
+            </summary>
+            <remarks>Possible values: 0-100. Default value: 100.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextSize">
+            <summary>
+            Text size out of 3 available options.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.TextSize.Regular"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.UrlOpenType">
+            <summary>
+            Determine the open-url action result, in app or external browser.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.OpenUrlType.Internal"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.UrlMediaType">
+            <summary>
+            Determine the url media type.
+            </summary>
+            <remarks>Default value: <see cref="F:Viber.Bot.OpenUrlMediaType.NotMedia"/>.</remarks>
+        </member>
+        <member name="P:Viber.Bot.KeyboardButton.TextBackgroundGradientColor">
+            <summary>
+            Background gradient to use under text, Works only when TextVAlign is equal to top or bottom	Hex value (6 characters)
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.KeyboardMessage">
+            <summary>
+            Keyboard message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.KeyboardMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.KeyboardMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardMessage.Text">
+            <summary>
+            The text of the message.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.KeyboardMessage.Keyboard">
+            <summary>
+            Keyboard object.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.Location">
+            <summary>
+            Location (coordinates).
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Location.Lon">
+            <summary>
+            Longitude of the <see cref="T:Viber.Bot.Location"/>.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.Location.Lat">
+            <summary>
+            Latitude of the <see cref="T:Viber.Bot.Location"/>.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.LocationMessage">
+            <summary>
+            Location message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.LocationMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.LocationMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.LocationMessage.Location">
+            <summary>
+            Location data.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.MessageBase">
+            <summary>
+            Base message info.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.MessageBase.#ctor(Viber.Bot.MessageType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.MessageBase"/> class.
+            </summary>
+            <param name="type">Message type.</param>
+        </member>
+        <member name="P:Viber.Bot.MessageBase.Receiver">
+            <summary>
+            Unique Viber user id.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.MessageBase.Type">
+            <summary>
+            Message type.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.MessageBase.Sender">
+            <summary>
+            Sender of the message.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.MessageBase.TrackingData">
+            <summary>
+            Allow the account to track messages and user’s replies. Sent tracking_data value will be passed back with user’s reply.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.MessageBase.MinApiVersion">
+            <summary>
+            Minimal API version required by clients for this message (default 1).
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.PictureMessage">
+            <summary>
+            Picture message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.PictureMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.PictureMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.PictureMessage.Text">
+            <summary>
+            The text of the message.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.PictureMessage.Media">
+            <summary>
+            URL of the image (JPEG).
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.PictureMessage.Thumbnail">
+            <summary>
+            URL of a reduced size image (JPEG).
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ApiResponseBase">
+            <summary>
+            Base API response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ApiResponseBase.Status">
+            <summary>
+            Action result.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ApiResponseBase.StatusMessage">
+            <summary>
+            Ok or failure reason.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.GetAccountInfoResponse">
+            <summary>
+            Get Account Info response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Uri">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Icon">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Background">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Category">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Subcategory">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.EventTypes">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Location">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Country">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Webhook">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.SubscribersCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.GetAccountInfoResponse.Members">
+            <inheritdoc />
+        </member>
+        <member name="T:Viber.Bot.GetUserDetailsResponse">
+            <summary>
+            Get User Details response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.GetUserDetailsResponse.MessageToken">
+            <summary>
+            Unique id of the message.
+            </summary>
+            <remarks>API nothing returns.</remarks>
+        </member>
+        <member name="P:Viber.Bot.GetUserDetailsResponse.User">
+            <summary>
+            User details.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.SendMessageResponse">
+            <summary>
+            Send message response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.SendMessageResponse.MessageToken">
+            <summary>
+            Unique id of the message.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.SetWebhookResponse">
+            <summary>
+            Set webhook Response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.SetWebhookResponse.EventTypes">
+            <summary>
+            List of event types you will receive a callback for. Should return the same values sent in the request.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.StickerMessage">
+            <summary>
+            Sticker message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.StickerMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.StickerMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.StickerMessage.StickerId">
+            <summary>
+            Unique Viber sticker ID.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.TextMessage">
+            <summary>
+            Text message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.TextMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.TextMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.TextMessage.Text">
+            <summary>
+            The text of the message.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.UrlMessage">
+            <summary>
+            Url message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.UrlMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.UrlMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UrlMessage.Media">
+            <summary>
+            URL, max 2000 characters.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.User">
+            <summary>
+            Viber user.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.User.Id">
+            <summary>
+            Unique Viber user id.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.User.Country">
+            <summary>
+            User’s 2 letter country code.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.User.Language">
+            <summary>
+            User’s phone language.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.User.ApiVersion">
+            <summary>
+            Max API version, matching the most updated user’s device.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.UserBase">
+            <summary>
+            Base user info.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserBase.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Viber.Bot.UserBase.Avatar">
+            <inheritdoc />
+        </member>
+        <member name="T:Viber.Bot.UserDetails">
+            <summary>
+            Viber user details.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserDetails.PrimaryDeviceOS">
+            <summary>
+            The operating system type and version of the user’s primary device.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserDetails.ViberVersion">
+            <summary>
+            The Viber version installed on the user’s primary device.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserDetails.Mcc">
+            <summary>
+            Mobile country code.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserDetails.Mnc">
+            <summary>
+            Mobile network code.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.UserDetails.DeviceType">
+            <summary>
+            The user’s device type.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ViberBotClient">
+            <summary>
+            Viber API.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient.XViberContentSignatureHeader">
+            <summary>
+            Header "X-Viber-Content-Signature".
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient.XViberAuthTokenHeader">
+            <summary>
+            Header "X-Viber-Auth-Token".
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient.BaseAddress">
+            <summary>
+            Base address.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient._httpClient">
+            <summary>
+            HTTP client.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient._hashAlgorithm">
+            <summary>
+            Hash algorithm.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ViberBotClient._jsonSettings">
+            <summary>
+            JSON serializer settings.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.ViberBotClient"/> class.
+            </summary>
+            <param name="authenticationToken">Authentication token.</param>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.#ctor(System.String,System.Net.IWebProxy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.ViberBotClient"/> class.
+            </summary>
+            <param name="authenticationToken">Authentication token.</param>
+            <param name="proxy">Proxy server.</param>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SetWebhookAsync(System.String,System.Collections.Generic.ICollection{Viber.Bot.EventType})">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.GetAccountInfoAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.GetUserDetailsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendTextMessageAsync(Viber.Bot.TextMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendPictureMessageAsync(Viber.Bot.PictureMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendFileMessageAsync(Viber.Bot.FileMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendVideoMessageAsync(Viber.Bot.VideoMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendContactMessageAsync(Viber.Bot.ContactMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendLocationMessageAsync(Viber.Bot.LocationMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendUrlMessageAsync(Viber.Bot.UrlMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendStickerMessageAsync(Viber.Bot.StickerMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendKeyboardMessageAsync(Viber.Bot.KeyboardMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.ValidateWebhookHash(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.SendMessageAsync(Viber.Bot.MessageBase)">
+            <summary>
+            Sends message to Viber user.
+            </summary>
+            <param name="message">Instance of message</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.RequestApiAsync``1(System.String,System.Object)">
+            <summary>
+            Making API request.
+            </summary>
+            <param name="method">Method name.</param>
+            <param name="data">Post data.</param>
+            <typeparam name="T">Response type.</typeparam>
+            <returns><typeparamref name="T"/> object.</returns>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.ParseHex(System.String)">
+            <summary>
+            Parsing hex.
+            </summary>
+            <param name="hex">Hex string.</param>
+            <returns>Array of bytes.</returns>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:Viber.Bot.ViberBotClient"/> and optionally disposes of the managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to releases only unmanaged resources.</param>
+        </member>
+        <member name="M:Viber.Bot.ViberBotClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Viber.Bot.ViberRequestApiException">
+            <summary>
+            Viber request API exception.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.ViberRequestApiException.#ctor(Viber.Bot.ErrorCode,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.ViberRequestApiException"/> class.
+            </summary>
+            <param name="code">Код ошибки (Error code.)</param>
+            <param name="message">Сообщение, которое описывает ошибку. (The message that describes the error.)</param>
+            <param name="method">Название метода. (Method name.)</param>
+            <param name="request">Запрос данных в формате JSON. (Request data in JSON format.)</param>
+            <param name="response">Данные ответа в формате JSON. (Response data in JSON format.)</param>
+        </member>
+        <member name="P:Viber.Bot.ViberRequestApiException.Code">
+            <summary>
+            Error code.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ViberRequestApiException.Method">
+            <summary>
+            Method name.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ViberRequestApiException.Request">
+            <summary>
+            Request data in JSON format.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.ViberRequestApiException.Response">
+            <summary>
+            Response data in JSON format.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.VideoMessage">
+            <summary>
+            Video message.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.VideoMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Viber.Bot.VideoMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.VideoMessage.Media">
+            <summary>
+            URL of the video (MP4, H264). Max size 50 MB. Only MP4 and H264 are supported.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.VideoMessage.Thumbnail">
+            <summary>
+            URL of a reduced size image (JPEG). Max size 100 kb. Recommended: 400x400. Only JPEG format is supported.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.VideoMessage.Size">
+            <summary>
+            Size of the video in bytes.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.VideoMessage.Duration">
+            <summary>
+            Video duration in seconds; will be displayed to the receiver. Max 180 seconds.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.BackgroundMediaType">
+            <summary>
+            Type of the background media.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.BackgroundMediaType.Picture">
+            <summary>
+            JPEG and PNG files.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.BackgroundMediaType.Gif">
+            <summary>
+            GIF files.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ChatMemberRole">
+            <summary>
+            Chat member role.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ChatMemberRole.Admin">
+            <summary>
+            Role "admin".
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ChatMemberRole.Participant">
+            <summary>
+            Role "participant".
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.ErrorCode">
+            <summary>
+            Error codes.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.Ok">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.InvalidUrl">
+            <summary>
+            The webhook URL is not valid.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.InvalidAuthToken">
+            <summary>
+            The authentication token is not valid.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.BadData">
+            <summary>
+            There is an error in the request itself (missing comma, brackets, etc.).
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.MissingData">
+            <summary>
+            Some mandatory data is missing.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.ReceiverNotRegistered">
+            <summary>
+            The receiver is not registered to Viber.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.ReceiverNotSubscribed">
+            <summary>
+            The receiver is not subscribed to the account.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.PublicAccountBlocked">
+            <summary>
+            The account is blocked.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.PublicAccountNotFound">
+            <summary>
+            The account associated with the token is not a account.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.PublicAccountSuspended">
+            <summary>
+            The account is suspended.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.WebhookNotSet">
+            <summary>
+            No webhook was set for the account.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.ReceiverNoSuitableDevice">
+            <summary>
+            The receiver is using a device or a Viber version that don’t support accounts.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.TooManyRequests">
+            <summary>
+            Rate control breach.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.ApiVersionNotSupported">
+            <summary>
+            Maximum supported account version by all user’s devices is less than the 'minApiVersion' in the message.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.IncompatibleWithVersion">
+            <summary>
+            MinApiVersion is not compatible to the message fields.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.PublicAccountNotAuthorized">
+            <summary>
+            The account is not authorized.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.InchatReplyMessageNotAllowed">
+            <summary>
+            Inline message not allowed.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.PublicAccountIsNotInline">
+            <summary>
+            The account is not inline.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.NoPublicChat">
+            <summary>
+            Failed to post to public account. The bot is missing a Public Chat interface.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.CannotSendBroadcast">
+            <summary>
+            Cannot send broadcast message.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.ErrorCode.GeneralError">
+            <summary>
+            General error.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.EventType">
+            <summary>
+            Event types.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Delivered">
+            <summary>
+            Event 'delivered'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Seen">
+            <summary>
+            Event 'seen'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Failed">
+            <summary>
+            Event 'failed'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Subscribed">
+            <summary>
+            Event 'subscribed'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Unsubscribed">
+            <summary>
+            Event 'unsubscribed'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.ConversationStarted">
+            <summary>
+            Event 'conversation_started'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Message">
+            <summary>
+            Event 'message'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Webhook">
+            <summary>
+            Event 'webhook'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.EventType.Action">
+            <summary>
+            Event 'action'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.KeyboardActionType">
+            <summary>
+            Keyboard action type.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardActionType.Reply">
+            <summary>
+            The value of ActionBody is sent as a text message to account.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardActionType.OpenUrl">
+            <summary>
+            The value of ActionBody is opened in the browser.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardActionType.LocationPicker">
+            <summary>
+            The client will share be able to share their location via a <see cref="T:Viber.Bot.LocationMessage"/> object.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardActionType.SharePhone">
+            <summary>
+            The client will share be able to share its phone number via a <see cref="T:Viber.Bot.ContactMessage"/> object.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardActionType.None">
+            <summary>
+            Nothing is sent to the user or account. Just an informative button.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.KeyboardInputFieldState">
+            <summary>
+            Keyboard input field state.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardInputFieldState.Regular">
+            <summary>
+            Display regular size input field.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardInputFieldState.Minimized">
+            <summary>
+            Display input field minimized by default.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.KeyboardInputFieldState.Hidden">
+            <summary>
+            Hide the input field.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.MessageType">
+            <summary>
+            Message type.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Text">
+            <summary>
+            Message 'text'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Picture">
+            <summary>
+            Message 'picture'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Video">
+            <summary>
+            Message 'video'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.File">
+            <summary>
+            Message 'file'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Location">
+            <summary>
+            Message 'location'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Contact">
+            <summary>
+            Message 'contact'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Sticker">
+            <summary>
+            Message 'sticker'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.CarouselContent">
+            <summary>
+            Message 'rich_media'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.MessageType.Url">
+            <summary>
+            Message 'url'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.OpenUrlMediaType">
+            <summary>
+            Determine the url media type.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlMediaType.NotMedia">
+            <summary>
+            Force browser usage.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlMediaType.Video">
+            <summary>
+            Will be opened via media player.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlMediaType.Gif">
+            <summary>
+            Client will play the gif in full screen mode.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlMediaType.Picture">
+            <summary>
+            Client will open the picture in full screen mode.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.OpenUrlType">
+            <summary>
+            Determine the open-url action result, in app or external browser.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlType.Internal">
+            <summary>
+            Type 'internal'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.OpenUrlType.External">
+            <summary>
+            Type 'external'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.TextHorizontalAlign">
+            <summary>
+            Horizontal align of the text.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextHorizontalAlign.Left">
+            <summary>
+            Align 'left'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextHorizontalAlign.Center">
+            <summary>
+            Align 'center'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextHorizontalAlign.Right">
+            <summary>
+            Align 'right'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.TextSize">
+            <summary>
+            Text size.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextSize.Small">
+            <summary>
+            Size 'small'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextSize.Regular">
+            <summary>
+            Size 'regular'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextSize.Large">
+            <summary>
+            Size 'large'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.TextVerticalAlign">
+            <summary>
+            Vertical alignment of the text.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextVerticalAlign.Top">
+            <summary>
+            Align 'top'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextVerticalAlign.Middle">
+            <summary>
+            Align 'middle'.
+            </summary>
+        </member>
+        <member name="F:Viber.Bot.TextVerticalAlign.Bottom">
+            <summary>
+            Align 'bottom'.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.IAccountInfo">
+            <summary>
+            Get Account Info response.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Id">
+            <summary>
+            Unique numeric id of the account.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Name">
+            <summary>
+            Account name.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Uri">
+            <summary>
+            Unique URI of the Account.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Icon">
+            <summary>
+            Account icon URL.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Background">
+            <summary>
+            Conversation background URL.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Category">
+            <summary>
+            Account category.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Subcategory">
+            <summary>
+            Account sub-category.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.EventTypes">
+            <summary>
+            List of event types you will receive a callback for. Should return the same values sent in the request.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Location">
+            <summary>
+            Account location (coordinates). Will be used for finding accounts near me.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Country">
+            <summary>
+            Account country.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Webhook">
+            <summary>
+            Account registered webhook.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.SubscribersCount">
+            <summary>
+            Number of subscribers.
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IAccountInfo.Members">
+            <summary>
+            Public Chat members. Public Accounts only.
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.IUserBase">
+            <summary>
+            База данных пользователя. (Base user info.)
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IUserBase.Name">
+            <summary>
+            Имя пользователя Viber. (User’s Viber name.)
+            </summary>
+        </member>
+        <member name="P:Viber.Bot.IUserBase.Avatar">
+            <summary>
+            URL аватара пользователя. (URL of the user’s avatar.)
+            </summary>
+        </member>
+        <member name="T:Viber.Bot.IViberBotClient">
+            <summary>
+            Viber API.
+            </summary>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SetWebhookAsync(System.String,System.Collections.Generic.ICollection{Viber.Bot.EventType})">
+            <summary>
+            Setting the webhook.
+            </summary>
+            <param name="url">Account webhook URL to receive callbacks &amp; messages from users.</param>
+            <param name="eventTypes">Indicates the types of Viber events that the account owner would like to be notified about. Don’t include this parameter in your request to get all events.</param>
+            <returns>Collection of <see cref="T:Viber.Bot.EventType"/>.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.GetAccountInfoAsync">
+            <summary>
+            Данные учетной записи, зарегистрированные в Viber. Администратор аккаунта сможет редактировать большинство этих деталей из своего клиента Viber.
+            (The account’s details as registered in Viber. The account admin will be able to edit most of these details from his Viber client.)
+            </summary>
+            <returns>The account’s details as registered in Viber.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.GetUserDetailsAsync(System.String)">
+            <summary>
+            Сведения о конкретном пользователе Viber на основе его уникального идентификатора пользователя. 
+            Идентификатор пользователя может быть получен из обратных вызовов, отправленных на учетную запись относительно действий 
+            пользователя. 
+            Этот запрос может быть отправлен дважды в течение 12 часов для каждого идентификатора пользователя.
+            The details of a specific Viber user based on his unique user ID. The user ID can be obtained from the callbacks sent to the account regarding user’s actions. This request can be sent twice during a 12 hours period for each user ID.
+            </summary>
+            <param name="id">Unique Viber user id.</param>
+            <returns>The details of a specific Viber user based on his unique user ID.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendTextMessageAsync(Viber.Bot.TextMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.TextMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.TextMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendPictureMessageAsync(Viber.Bot.PictureMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.PictureMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.PictureMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendFileMessageAsync(Viber.Bot.FileMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.FileMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.FileMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendVideoMessageAsync(Viber.Bot.VideoMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.VideoMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.VideoMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendContactMessageAsync(Viber.Bot.ContactMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.ContactMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.ContactMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendLocationMessageAsync(Viber.Bot.LocationMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.LocationMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.LocationMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendUrlMessageAsync(Viber.Bot.UrlMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.UrlMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.UrlMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendStickerMessageAsync(Viber.Bot.StickerMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.StickerMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.StickerMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.SendKeyboardMessageAsync(Viber.Bot.KeyboardMessage)">
+            <summary>
+            Sends <see cref="T:Viber.Bot.KeyboardMessage"/> to Viber user.
+            </summary>
+            <param name="message">Instance of <see cref="T:Viber.Bot.KeyboardMessage"/>.</param>
+            <returns>Message token.</returns>
+        </member>
+        <member name="M:Viber.Bot.IViberBotClient.ValidateWebhookHash(System.String,System.String)">
+            <summary>
+            Validate hash.
+            </summary>
+            <param name="signatureHeader">Value of "X-Viber-Content-Signature" header.</param>
+            <param name="jsonMessage">JSON message.</param>
+            <returns><c>true</c> if valid.</returns>
+        </member>
+    </members>
+</doc>
